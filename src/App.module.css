@@ -1,0 +1,13 @@
+.btnTry {
+  border: none;
+  background: #eee;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.btnTry:hover {
+  color: white;
+  background: hsl(200, 100%, 75%);
+}
