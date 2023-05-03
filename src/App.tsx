@@ -50,6 +50,15 @@ function App() {
     window.location.reload();
   };
 
+  document.addEventListener("keydown", (event) => {
+    if (
+      (event.key === "Enter" && isLoser) ||
+      (event.key === "Enter" && isWinner)
+    ) {
+      location.reload();
+    }
+  });
+
   return (
     <div
       style={{
@@ -81,7 +90,11 @@ function App() {
       </div>
 
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
-      <HangmanWord guessedLetters={guessedLetters} wordToGuess={wordToGuess} />
+      <HangmanWord
+        reveal={isLoser}
+        guessedLetters={guessedLetters}
+        wordToGuess={wordToGuess}
+      />
       <div style={{ alignSelf: "stretch" }}>
         <Keyboard
           disabled={isWinner || isLoser}
